@@ -33,14 +33,14 @@ public class Member {
 	
 
 	public Member(String mem_id, String mem_pwd, String mem_name, Date mem_birthday, String mem_nickname,
-			String mem_phonme_num, int mem_balance, String mem_profile_img, String mem_status_message, int mem_status) {
+			String mem_phone_num, int mem_balance, String mem_profile_img, String mem_status_message, int mem_status) {
 		super();
 		this.mem_id = mem_id;
 		this.mem_pwd = mem_pwd;
 		this.mem_name = mem_name;
 		this.mem_birthday = mem_birthday;
 		this.mem_nickname = mem_nickname;
-		this.mem_phonme_num = mem_phonme_num;
+		this.mem_phone_num = mem_phone_num;
 		this.mem_balance = mem_balance;
 		this.mem_profile_img = mem_profile_img;
 		this.mem_status_message = mem_status_message;
@@ -87,12 +87,12 @@ public class Member {
 		this.mem_nickname = mem_nickname;
 	}
 
-	public String getMem_phonme_num() {
-		return mem_phonme_num;
+	public String getMem_phone_num() {
+		return mem_phone_num;
 	}
 
-	public void setMem_phonme_num(String mem_phonme_num) {
-		this.mem_phonme_num = mem_phonme_num;
+	public void setMem_phone_num(String mem_phone_num) {
+		this.mem_phone_num = mem_phone_num;
 	}
 
 	public int getMem_balance() {
