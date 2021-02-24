@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>TOGETHER 회원가입</title>
+    
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../common_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../common_images/favicon.ico" type="image/x-icon">
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+           <script type="text/javascript">   
+        $(document).ready( function() {
+            
+            $("header").load("../common/Header.html");  //nav 인클루드
+            $("footer").load("../common/Footer.html");  //nav 인클루드
+    
+                        
+        });
+    </script>
+<script>
+     function previewImage(targetObj, View_area) {
+            var preview = document.getElementById(View_area); //div id
+            var ua = window.navigator.userAgent;
+
+            //ie일때(IE8 이하에서만 작동)
+            if (ua.indexOf("MSIE") > -1) {
+                targetObj.select();
+                try {
+                    var src = document.selection.createRange().text; // get file full path(IE9, IE10에서 사용 불가)
+                    var ie_preview_error = document.getElementById("ie_preview_error_" + View_area);
+
+
+                    if (ie_preview_error) {
+                        preview.removeChild(ie_preview_error); //error가 있으면 delete
+                    }
+
+                    var img = document.getElementById(View_area); //이미지가 뿌려질 곳
+
+                    //이미지 로딩, sizingMethod는 div에 맞춰서 사이즈를 자동조절 하는 역할
+                    img.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + src + "', sizingMethod='scale')";
+                } catch (e) {
+                    if (!document.getElementById("ie_preview_error_" + View_area)) {
+                        var info = document.createElement("<p>");
+                        info.id = "ie_preview_error_" + View_area;
+                        info.innerHTML = e.name;
+                        preview.insertBefore(info, null);
+                    }
+                }
+                //ie가 아닐때(크롬, 사파리, FF)
+            } else {
+                var files = targetObj.files;
+                for (var i = 0; i < files.length; i++) {
+                    var file = files[i];
+                    var imageType = /image.*/; //이미지 파일일경우만.. 뿌려준다.
+                    if (!file.type.match(imageType))
+                        continue;
+                    var prevImg = document.getElementById("prev_" + View_area); //이전에 미리보기가 있다면 삭제
+                    if (prevImg) {
+                        preview.removeChild(prevImg);
+                    }
+                    var img = document.createElement("img");
+                    img.id = "prev_" + View_area;
+                    img.classList.add("obj");
+                    img.file = file;
+                    img.style.width = '100%';
+                    // img.style.height = '100px';
+                    preview.appendChild(img);
+                    if (window.FileReader) { // FireFox, Chrome, Opera 확인.
+                        var reader = new FileReader();
+                        reader.onloadend = (function (aImg) {
+                            return function (e) {
+                                aImg.src = e.target.result;
+                            };
+                        })(img);
+                        reader.readAsDataURL(file);
+                    } else { // safari is not supported FileReader
+                        //alert('not supported FileReader');
+                        if (!document.getElementById("sfr_preview_error_"
+                            + View_area)) {
+                            var info = document.createElement("p");
+                            info.id = "sfr_preview_error_" + View_area;
+                            info.innerHTML = "not supported FileReader";
+                            preview.insertBefore(info, null);
+                        }
+                    }
+                }
+            }
+        }
+</script>    
+
+</head>
+<style>
+
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+    body 
+{
+    background: url(../common_images/bgi.png) no-repeat center/cover;
+    
+}
+   body > section
+   {
+      font-family: 'BMJUA';
+   }
+h1
+{
+    margin-top: 100px;
+}
+    body > section >div {
+        max-width: 500px;
+        min-height: 100%;
+        padding: 0 15px 100px 30px;
+        box-sizing: border-box;
+        position: relative;
+        margin: 0 auto;
+    }
+    body > section > div > div.logo{
+        margin:100px auto  100px auto;
+        padding: 76px 0 60px 0;
+        height: 20px;
+        text-align: center;
+    }
+
+   .signup{
+   margin:100px auto  100px auto;
+   
+   }
+    body > section > div > div.logo > img{
+        width: 100%;
+
+    }
+    body > section > div > div.insertpage > div > div > form > div > div.nohiddenbox,
+    body > section > div > div.insertpage > div > div > form > div > div.hiddenbox
+    {
+        margin: 0px 0px 0px 20px;
+    }
+
+    body > section > div > div.insertpage > div > div > form > div > div.nohiddenbox > h5:nth-child(n+1)
+    {
+        margin: 20px 30px 5px 0px;
+        
+    }
+
+    body > section > div > div.insertpage > div > div > form > div > div.nohiddenbox > input.insert
+    {
+        width: 65%;
+        font-size: 15px;
+        margin: 10px auto 10px auto;
+        background-color: rgba(256,256,256,0.2);
+        border-top-style: hidden;
+        border-left-style: hidden;
+        border-right-style: hidden;
+        
+    }
+    body > section > div > div.insertpage > div > div > form > div > div.nohiddenbox > input.insertbox
+    {
+        width:100%;
+        height: 100px;
+    }
+
+    body > section > div > div.insertpage > div > div > form > div > div.hiddenbox{
+        display: none;
+    }
+    .insertbox
+    {
+        padding: 30px;
+        background-color: rgba(256,256,256,0.2);
+        border-radius: 10px;
+        
+    }
+    /*
+    input.button
+    {
+        color: #fff;
+        width: 100px;
+        background-color: rgb(142, 192, 227);
+        border-color:  rgb(142, 192, 227);
+        border-radius: 5px;
+        border-style: none;
+    }
+    .btn-success,
+    .btn-success:hover
+    {
+        background-color: rgb(142, 192, 227)!important;
+        border-color:  rgb(142, 192, 227)!important;
+        float: right;
+    }*/
+   .btn-save
+   {
+      float: right;
+      width : 100px;
+   }
+    /* 
+    이미지파일 미리보기
+    */
+
+</style>
+<body>
+    <header>
+
+    </header>
+    <section>
+        <div class = "signup">
+            <div class="title">
+                <h1>회원가입</h1>
+            </div>
+            <div class="insertpage">
+                <div class="signupoutterbox">
+                    <div class="signupinnerbox">
+                        <form class="signuppass">
+                            <div class="insertbox">
+                                <div class="nohiddenbox">
+                                    <h5>아이디</h5>
+                                    <input class = "insert" type="text"  name="mem_id" placeholder="아이디" >
+                                    <input class="btn btn-primary" type="button" value="중복확인">
+                                    <h5>비밀번호</h5>
+                                    <input class="insert" type="password" name="mem_pwd" placeholder="비밀번호">
+                                    <input class="insert" type="password" name="mem_chkpwd" placeholder="비밀번호확인">
+                                    <input class="btn btn-primary" type="button" value="비밀번호확인">
+                                    <h5>닉네임</h5>
+                                    <input class = "insert" type="text"  name="mem_nickname" placeholder="닉네임" >
+                                    <h5>이름</h5>
+                                    <input class = "insert" type="text"  name="mem_name">
+                                    <h5>생일</h5>
+                                    <input class = "insert" type="date"  name="mem_birthday">
+                                    <h5>핸드폰번호</h5>
+                                    <input class = "insert" type="tel"  name="mem_phone_num" placeholder="01012345678">
+                                    <h5>이미지</h5>
+                                    <div id='View_area' style='position:relative; color: black; border: 0px solid black; margin:0 0px 0 100px ;'>
+                                        <img id ="prev_View_area" class="obj" src="../common_images/img_ex.png">
+                                    
+                                    <input type="file" name="profile_pt" class="commfloat insert" id="profile_pt" onchange="previewImage(this,'View_area')" style="margin-top:20px;">
+                                    </div>
+                                    <h5>상태메시지</h5>
+                                    <input class = "insertbox" type="textarea" clos="30" rows="10" placeholder="최대 30자까지 작성 가능합니다" name="mem_status_message" >
+                                </div>
+                                <div class="hiddenbox">
+                                    <h5>잔액</h5>
+                                    <input class = "insert" type="number"  name="id" value="0" >
+                                </div>
+                            </div>                            
+                        </form>
+
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                 <br>
+                                   <button class="btn btn-primary btn-save" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> 저장</button>
+                             </div>
+                       </div>
+
+                    </div>
+                    
+            </div>
+              </div>
+        </div>
+    </section>
+    <footer>
+
+    </footer>
+</body>
+</html>

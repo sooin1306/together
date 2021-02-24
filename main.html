@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="./main_content/common_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./common_images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <title>메인입니다.</title>
+        <script type="text/javascript">   
+        $(document).ready( function() {
+            
+            $("header").load("./main_content/Header.html");  //nav 인클루드
+            $("footer").load("./main_content/Footer.html");  //nav 인클루드
+    
+                        
+        });
+    </script>
+    
+    
+    <style>
+               /* 글씨체 */
+     @font-face {
+        font-family: 'BMJUA';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    body{
+    	overflow-x:hidden
+    }
+
+    body>section{
+        font-family: 'BMJUA';
+    }
+
+
+             /* banner */
+        .banner {position: relative; width: 400px; height: 400px;  margin:5px 0 0 190px; overflow: hidden;}
+        .banner ul {position: absolute; margin: 70px 0 0 0;padding:0; list-style: none; }
+        .banner ul li {float: left; width: 400px; height: 400px; margin:0; padding:0;}
+            /* 내가 참여하고 있는 TOGETHER */
+
+    div.mytoglist{
+        width: 100%;
+        margin: 0 0 0 70px;
+    }
+    .tog{
+         width : auto;
+         border: 1px solid;
+         display: inline-block;
+         margin: 10px 60px;
+         padding: 10px;
+         
+    }
+
+    .tog>ul{
+        padding-inline-start: 0px;
+    }
+    
+    .l1>img{
+
+        margin: 15px;
+        
+    }
+    .l1{
+        align-content: center;
+    }
+    
+    div.mytoglist>div.tog>ul{
+        list-style-type: none;
+      
+    }
+    
+    div.mytoglist>div.tog>ul>li:last-child{
+        text-align: center;
+        font-size: 30px;
+    } 
+
+       /*내갸 참여하고 있는 투게더*/
+       .container {
+          width:80%;
+          margin: 10px auto;
+      }
+        .MultiCarousel { float: left; overflow: hidden; padding: 15px; width: 100%; position:relative; }
+        .MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left; }
+        .MultiCarousel .MultiCarousel-inner .item { float: left;}
+        .MultiCarousel .MultiCarousel-inner .item > div { text-align: center; padding:10px; margin:10px; background:#f1f1f1; color:#666;}
+        .MultiCarousel .leftLst, .MultiCarousel .rightLst { position:absolute; border-radius:50%;top:calc(50% - 20px); }
+        .MultiCarousel .leftLst { left:0; }
+        .MultiCarousel .rightLst { right:0; }
+    
+        .MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none; background:#ccc; }
+
+        
+        .MultiCarousel .MultiCarousel-inner .item > div,
+        #MultiCarousel1 > div > div:nth-child(n+1) > div
+        {
+            width:auto;
+        }
+        .pad15>img{
+            width: 70%;
+            padding: 10px;
+        }
+        #mytog{text-align: center; margin: 50px auto; padding :auto;font-size: 50px;}
+
+        /*투게더 소개*/
+        #intro{width: 100%; margin: 50px auto auto 100px; }
+        #introp{font-size: 37px; padding: 50px 0 0 100px;margin: 5px 15px;}
+        #intro1{ margin: 30px 200px; font-size: 30px;}
+         #introp2{font-size: 22px;}
+
+    /* media query*/
+    @media screen and (max-width: 768px) {
+     
+        .banner {position: relative; width: 500px; height: 350px;  margin:70px 0 0 120px; overflow: hidden;}
+        .banner ul {position: absolute; margin:25px auto; padding:0; list-style: none; }
+        .banner ul li {float: left; width: 500px; height: 350px; margin:0; padding:0;}
+
+        img{
+            width: 500px;
+        }
+        #h{
+            background-image: none !important;
+        }
+        #mytog{
+            font-size: 30px;
+            margin: 90px auto 0 auto;
+
+        }
+        #intro{
+            font-size: 30px;
+            padding: 0px; margin: 0px;
+        }
+
+    }
+
+    @media screen and (max-width: 411px) {
+        .banner {position: relative; width: 300px; height: 200px;  margin:30px 0 0 52px; overflow: hidden;}
+        .banner ul {position: absolute; margin:0; padding:0; list-style: none; }
+        .banner ul li {float: left; width: 300px; height: 200px; margin:0; padding:0;}
+
+        img{
+            width: 300px;
+        }
+        #mytog{
+            font-size: 20px;
+            padding: 0;
+        }
+        #intro{
+
+            padding: 0px;margin: 0px;
+
+        }
+        #introp{font-size: 35px; margin: 0px; padding: 0;}
+        #intro1{
+            font-size: 15px;
+            margin:5px; padding: 0;; 
+        }
+        #introp2{
+            font-size: 20px;
+        }
+    }
+    @media screen and (max-width: 375px) {
+        .banner {position: relative; width: 300px; height: 200px;  margin:20px 0 0 40px; overflow: hidden;}
+        .banner ul {position: absolute; margin:0; padding:0; list-style: none; }
+        .banner ul li {float: left; width: 300px; height: 200px; margin:0; padding:0;}
+
+        img{
+            width: 300px;
+        }
+    
+    }
+    </style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script language="JavaScript">
+
+    $(document).ready(function() {
+        var $banner = $(".banner").find("ul");
+
+        var $bannerWidth = $banner.children().outerWidth();//이미지의 폭
+        var $bannerHeight = $banner.children().outerHeight(); // 높이
+        var $length = $banner.children().length;//이미지의 갯수
+        var rollingId;
+
+        //정해진 초마다 함수 실행
+        rollingId = setInterval(function() { rollingStart(); }, 2000);//다음 이미지로 롤링 애니메이션 할 시간차
+    
+        function rollingStart() {
+            $banner.css("width", $bannerWidth * $length + "px");
+            $banner.css("height", $bannerHeight + "px");
+            //alert(bannerHeight);
+            //배너의 좌측 위치를 옮겨 준다.
+            $banner.animate({left: - $bannerWidth + "px"}, 3000, function() { //숫자는 롤링 진행되는 시간이다.
+                //첫번째 이미지를 마지막 끝에 복사(이동이 아니라 복사)해서 추가한다.
+                $(this).append("<li>" + $(this).find("li:first").html() + "</li>");
+                //뒤로 복사된 첫번재 이미지는 필요 없으니 삭제한다.
+                $(this).find("li:first").remove();
+                //다음 움직임을 위해서 배너 좌측의 위치값을 초기화 한다.
+                $(this).css("left", 0);
+                //이 과정을 반복하면서 계속 롤링하는 배너를 만들 수 있다.
+            });
+        }
+    }); 
+
+
+        /*내가참여하고 있는 투게더*/
+    
+        $(document).ready(function () {
+    var itemsMainDiv = ('.MultiCarousel');
+    var itemsDiv = ('.MultiCarousel-inner');
+    var itemWidth = "";
+
+    $('.leftLst, .rightLst').click(function () {
+        var condition = $(this).hasClass("leftLst");
+        if (condition)
+            click(0, this);
+        else
+            click(1, this)
+    });
+
+    ResCarouselSize();
+
+    $(window).resize(function () {
+        ResCarouselSize();
+    });
+
+    //this function define the size of the items
+    function ResCarouselSize() {
+        var incno = 0;
+        var dataItems = ("data-items");
+        var itemClass = ('.item');
+        var id = 0;
+        var btnParentSb = '';
+        var itemsSplit = '';
+        var sampwidth = $(itemsMainDiv).width();
+        var bodyWidth = $('body').width();
+        $(itemsDiv).each(function () {
+            id = id + 1;
+            var itemNumbers = $(this).find(itemClass).length;
+            btnParentSb = $(this).parent().attr(dataItems);
+            itemsSplit = btnParentSb.split(',');
+            $(this).parent().attr("id", "MultiCarousel" + id);
+
+
+            if (bodyWidth >= 1200) {
+                incno = itemsSplit[3];
+                itemWidth = sampwidth / incno;
+            }
+            else if (bodyWidth >= 992) {
+                incno = itemsSplit[2];
+                itemWidth = sampwidth / incno;
+            }
+            else if (bodyWidth >= 768) {
+                incno = itemsSplit[1];
+                itemWidth = sampwidth / incno;
+            }
+            else {
+                incno = itemsSplit[0];
+                itemWidth = sampwidth / incno;
+            }
+            $(this).css({ 'transform': 'translateX(0px)', 'width': itemWidth * itemNumbers });
+            $(this).find(itemClass).each(function () {
+                $(this).outerWidth(itemWidth);
+            });
+
+            $(".leftLst").addClass("over");
+            $(".rightLst").removeClass("over");
+
+        });
+    }
+
+
+    //this function used to move the items
+    function ResCarousel(e, el, s) {
+        var leftBtn = ('.leftLst');
+        var rightBtn = ('.rightLst');
+        var translateXval = '';
+        var divStyle = $(el + ' ' + itemsDiv).css('transform');
+        var values = divStyle.match(/-?[\d\.]+/g);
+        var xds = Math.abs(values[4]);
+        if (e == 0) {
+            translateXval = parseInt(xds) - parseInt(itemWidth * s);
+            $(el + ' ' + rightBtn).removeClass("over");
+
+            if (translateXval <= itemWidth / 2) {
+                translateXval = 0;
+                $(el + ' ' + leftBtn).addClass("over");
+            }
+        }
+        else if (e == 1) {
+            var itemsCondition = $(el).find(itemsDiv).width() - $(el).width();
+            translateXval = parseInt(xds) + parseInt(itemWidth * s);
+            $(el + ' ' + leftBtn).removeClass("over");
+
+            if (translateXval >= itemsCondition - itemWidth / 2) {
+                translateXval = itemsCondition;
+                $(el + ' ' + rightBtn).addClass("over");
+            }
+        }
+        $(el + ' ' + itemsDiv).css('transform', 'translateX(' + -translateXval + 'px)');
+    }
+
+    //It is used to get some elements from btn
+    function click(ell, ee) {
+        var Parent = "#" + $(ee).parent().attr("id");
+        var slide = $(Parent).attr("data-slide");
+        ResCarousel(ell, Parent, slide);
+    }
+
+});
+
+</script>
+</head>
+<body>
+<header>
+
+</header>
+<section>
+    
+    <article  id="h" style="background-image: url(./common_images/bgi.png); width: 100%; background-position: center;">
+    <div class="container1" >
+   <div class="item">
+    <div class="contents">
+        <div class="banner" >
+            <ul> <!-- 임박한 투게더 그림  -->
+                <li><a href=""><img src="./common_images/logo.png"  alt="TOGETHER" width="400px" id="img"></a></li>
+                <li><a href=""><img src="./common_images/logo.png"  alt="TOGETHER" width="400px" id="img"></a></li>
+                <li><a href=""><img src="./common_images/logo.png"   alt="TOGETHER" width="400px" id="img"></a></li>                     
+            </ul>          
+        </div>
+    </div> 
+   </div>
+</div>
+    </article>
+    <article>
+        <div  id="mytog">
+        <p>내가 참여하고 있는 TOGETHER</p>
+         </div>
+        <div class="container">
+            <div class="row">
+                <div class="MultiCarousel " data-items="1,2,3,3" data-slide="1" id="MultiCarousel"  data-interval="1000">
+                    <div class="MultiCarousel-inner">
+                        <div class="item">
+                            <div class="pad15">
+                                <img src="./main_content/common_images/logo.png" alt="">
+                                <p class="lead">챌린지 이름</p>   
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="pad15">
+                               <img src="./main_content/common_images/logo.png" alt="">
+                                <p class="lead">챌린지 이름</p>   
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="pad15">
+                                <img src="./main_content/common_images/logo.png" alt="">
+                                <p class="lead">챌린지 이름</p>   
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="pad15">
+                                <img src="./main_content/common_images/logo.png" alt="">
+                                <p class="lead">챌린지 이름</p>   
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="pad15">
+                               <img src="./main_content/common_images/logo.png" alt="">
+                                <p class="lead">챌린지 이름</p>   
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="pad15">
+                                <img src="./main_content/common_images/logo.png" alt="">
+                                <p class="lead">챌린지 이름</p>   
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <button class="btn btn-primary leftLst"><</button>
+                    <button class="btn btn-primary rightLst">></button>
+                </div>
+            </div>
+        </div>
+    
+
+
+    </article>
+
+<div id="intro">
+    <article> 
+        <div>
+        <p id="introp"> TOGETHER 소개</p>
+        
+          
+                <div id ="intro1">
+                 TOGETHER  시작!
+               <p id="introp2"> 누구나 더 나은 내일은 꿈꿉니다. <br>                 
+                오늘도보다 더 나은 내일이 되길,<br>
+                내가 원하는 나의 모습이 되기를 바라면 노력하죠.<br></p>
+                <br>
+                TOGETHER와 함께라면 달라지는 이유
+               <p id="introp2">  01. 행동중심의 작고쉬운 목표 &#127937;<br>
+                02. 돈의로 의지를 구입 &#128181;<br>
+                03. 성취감을 높이는 상금 &#128176;<br>
+                04. 혼자가 아닌 함꼐 달성 &#129340;<br></p>
+                <br>
+              TOGETHER는 이렇게 진행됩니다
+              <p id="introp2">  01. 원하는 TOGETHER 선택<br>
+                02. 참가비를 내고 신청<br>
+                03. 실천한 일은 사진으로 인증<br>
+                04. 100% 달성하면 추가 상금!<br></p>
+                <br>
+             좋은습관, TOGETHER로 시작하세요
+             <p id="introp2">   변화하고 싶다면 TOGETHER가 답이다.<br>
+                작은 습관들을 조금씩 쌓아 원하는 모습이 되는 그 날까지 TOGETHER와 함께 할게요!</p>
+
+            </div>
+
+        </div>     
+    
+
+    </article>
+    
+    <!-- 임박한 투게더 추가 -->
+    <article>
+    	
+    </article>
+</div>
+ 
+</section>
+<footer>
+</footer>
+</body>
+</html>

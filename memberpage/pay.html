@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <title>TOGETHER 결제하기</title>
+	<!-- 파비콘 -->
+    <link rel="shortcut icon" href="../common_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../common_images/favicon.ico" type="image/x-icon">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+            <script type="text/javascript">   
+        $(document).ready( function() {
+            
+            $("header").load("../common/Header.html");  //nav 인클루드
+            $("footer").load("../common/Footer.html");  //nav 인클루드
+    
+                        
+        });
+    </script>
+
+    <style>
+             /* 글씨체 */
+     @font-face {
+        font-family: 'BMJUA';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+     /* 배경화면 설정 */
+        body 
+{
+    background: url(../common_images/bgi.png) no-repeat center/cover;
+    
+}
+   body > section
+   {
+      font-family: 'BMJUA';
+   }
+    body > section > article > div:nth-child(1){
+         margin-top: 50px;
+    }
+        body > section > article > div:nth-child(3){
+         margin-bottom: 50px;
+    }
+    
+        .line1{
+            margin-top: 20px;
+            border: solid 1px;
+            width: 50%;
+            border-radius: 10px;
+            margin-right: auto;
+            margin-left: auto;
+            background-color: rgba(202, 220, 234,0.5);
+            border-style: none;
+
+        }
+        .in1{
+            margin: 25px;
+            padding: 15px;
+   
+        }
+        .success{
+            display: inline;
+            font-size: 15px;
+            background-color: yellow;
+        }
+        #charge{
+            border-style: none;
+            background-color: rgba(255, 255, 255, 0.6);
+            width: 10%;
+            text-align: right;
+        }
+        .bt{
+            text-align: right;
+        }
+        
+
+            /* media query*/
+    @media screen and (max-width: 768px) {
+        .line1{
+            width: 70%;
+        }
+        body{
+       margin: 225px auto;
+       font-size: 15px;
+    }
+        .success{
+            font-size: 10spx;
+        }
+    }
+    @media screen and (max-width: 411px) {
+        .line1{
+            width: 85%;
+        }
+        body{
+       margin: 70px auto;
+
+    }
+    }
+    @media screen and (max-width: 375px) {
+
+        body{
+       margin: 90px auto;
+
+    }
+    }
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+
+    </header>
+    <section><article>
+        <div class="line1">
+            <div class="in1">
+            <img src="../common_images/logo.png" width="20%"> <br>
+                투게더 제목<br>
+                INFO_CONFIRM_CNT<br>
+                tog_start_date ~ tog_end_date
+            
+        </div>
+        </div>
+
+        
+
+       
+        <div class="line1">
+            <div class="in1" >
+             목표에 돈을 걸고 의지를 유지하세요!<br><br>
+            <div>참가비<br>
+            <input type="number" value="1" id="charge" readonly>&nbsp;만원</div><br>
+            <div class="success">
+                100% 성공 전액 페이백 + 상금<br>
+                100% 미만 전액 손실<br>
+                100%가 아니면 모두 손실되므로 이점 참고 바랍니다<br>
+                ※ 참가비는 10000원으로 한정되어있습니다. 이점 참고해주세요. 
+            </div>
+        </div>
+    </div>
+    </div>
+
+ 
+        <div class="line1">
+            <div class="in1">
+            <div>최종 결제금액</div><br>
+           
+            현재 보유 코인 (mem_balance 값을 넣을 예정)<br>
+            총 참가비 : <input type="number" value="1" id="charge" readonly>&nbsp;만원 <br>
+            <div class="bt">
+            <input type="button" value="결제하기" name="mem_balance" class="btn-primary" style="border-style: none;border-radius: 5px;">
+            </div>
+        </div>
+    </div>
+</article>
+    </section>
+    <footer>
+    </footer>
+
+</body>
+</html>

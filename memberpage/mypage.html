@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../common_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../common_images/favicon.ico" type="image/x-icon">
+    
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <title>TOGETHER 마이페이지</title>
+        <script type="text/javascript">   
+        $(document).ready( function() {
+            
+            $("header").load("../common/Header.html");  //nav 인클루드
+            $("footer").load("../common/Footer.html");  //nav 인클루드
+    
+                        
+        });
+    </script>
+    <style>
+               /* 글씨체 */
+     @font-face {
+        font-family: 'BMJUA';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+      body 
+{
+    background: url(../common_images/bgi.png) no-repeat center/cover;
+    
+}
+   body > section
+   {
+      font-family: 'BMJUA';
+   }
+
+    /* 나의 정보 */
+    #intro
+    {
+        width: 100%;
+        margin: 10px auto;
+    }
+    .text-center
+    {
+        width: 100%;
+    }
+    h2
+    {
+        margin-top: 40px;
+    }
+
+    /*button, .btn-primary 버튼,탭 색 통일
+    {
+        background-color: rgb(142, 192, 227);
+        border-color: rgb(142, 192, 227);
+        color:#fff;
+    } */
+    #intro > article > section > div > div:nth-child(2) > div.col-sm-8 > ul > li:nth-child(n+1) > a{
+        /* 탭 스타일 */
+        background-color:rgba(253, 253, 253, 0.5);
+        border: rgb(142, 192, 227) solid 1px;
+        border-radius: 2px;
+        color: rgb(142, 192, 227);
+        padding: 5px;
+        font-size: auto;
+    }
+    #intro > article > section > div > div:nth-child(2) > div.col-sm-8 > ul > li:nth-child(n+1) > a:hover
+    {
+        text-decoration: none;
+        background-color: rgb(142, 192, 227) ;
+        color: #fff;
+
+    }
+    img
+    {
+        width: 80%;
+        display: block;
+        margin: 10px auto;
+    }
+    .tog_img
+    {
+        width:60% ;
+    }
+    .progress
+    {
+        font-size: 16px;
+        width: 85%;
+        height: 20px;
+        margin: 10px auto;
+    }
+    .bg-info
+    {
+        background-color:rgb(142, 192, 227) !important;
+    }
+    #registrationForm > div > div:nth-child(2)
+    {
+        width: 50%;
+        margin : 5px auto;
+    }
+    /* 인증하러가기 버튼 */
+    button
+    {
+        margin-top: 20px;
+        float: right;
+    }
+    button:hover
+    {
+        background-color: rgb(66, 66, 252);
+    }
+    #intro > article > section > div > div:nth-child(2) > div.col-sm-4 > div.row > div
+    {
+        margin: 5px auto;
+    }
+    /* 완료한 투게더 , 내가 개설한 투게더 */
+
+    div.mytoglist{
+        width: 100%;
+        margin: 0 0 0 70px;
+    }
+    .tog{
+         width : auto;
+         border: 1px solid;
+         display: inline-block;
+         margin: 10px 60px;
+         padding: 10px;
+         
+    }
+
+    .tog>ul{
+        padding-inline-start: 0px;
+    }
+    .l1>img{
+        margin: 15px; 
+    }
+    .l1{
+        align-content: center;
+    }
+    div.mytoglist>div.tog>ul{
+        list-style-type: none;
+    }
+    div.mytoglist>div.tog>ul>li:last-child{
+        text-align: center;
+        font-size: 30px;
+    } 
+       /*내갸 참여하고 있는 투게더*/
+       .container {
+          width:90%;
+          margin: 10px auto;
+      }
+        .MultiCarousel { float: left; overflow: hidden; padding: 15px; width: 100%; position:relative; }
+        .MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left; }
+        .MultiCarousel .MultiCarousel-inner .item { float: left;}
+        .MultiCarousel .MultiCarousel-inner .item > div { text-align: center; padding:10px; margin:10px; background:#f1f1f1; color:#666;}
+        .MultiCarousel .leftLst, .MultiCarousel .rightLst { position:absolute; border-radius:50%;top:calc(50% - 20px); }
+        .MultiCarousel .leftLst { left:0; }
+        .MultiCarousel .rightLst { right:0; }
+    
+        .MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none; background:#ccc; }
+
+        
+        .MultiCarousel .MultiCarousel-inner .item > div,
+        #MultiCarousel1 > div > div:nth-child(n+1) > div
+        {
+            width:auto;
+        }
+        .pad15>img{
+            width: 70%;
+            padding: 10px;
+        }
+        #mytog{text-align: center; margin: 50px auto; padding :auto;font-size: 50px;}
+
+        /*투게더 소개*/
+        #intro{
+            width: 80%;
+        }
+
+    /* media query*/
+    @media screen and (max-width: 768px) {
+     
+        .banner {position: relative; width: 500px; height: 350px;  margin:70px 0 0 120px; overflow: hidden;}
+        .banner ul {position: absolute; margin:25px auto; padding:0; list-style: none; }
+        .banner ul li {float: left; width: 500px; height: 350px; margin:0; padding:0;}
+
+   
+        #h{
+            background-image: none !important;
+        }
+        #mytog{
+            font-size: 30px;
+            margin: 90px auto 0 auto;
+
+        }
+
+    }
+
+    @media screen and (max-width: 411px) {
+        .banner {position: relative; width: 300px; height: 200px;  margin:30px 0 0 52px; overflow: hidden;}
+        .banner ul {position: absolute; margin:0; padding:0; list-style: none; }
+        .banner ul li {float: left; width: 300px; height: 200px; margin:0; padding:0;}
+
+     
+        #mytog{
+            font-size: 20px;
+            padding: 0;
+        }
+    }
+    @media screen and (max-width: 375px) {
+        .banner {position: relative; width: 300px; height: 200px;  margin:20px 0 0 40px; overflow: hidden;}
+        .banner ul {position: absolute; margin:0; padding:0; list-style: none; }
+        .banner ul li {float: left; width: 300px; height: 200px; margin:0; padding:0;}
+
+ 
+    
+    }
+    </style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script language="JavaScript">
+
+    $(document).ready(function() {
+        var $banner = $(".banner").find("ul");
+
+        var $bannerWidth = $banner.children().outerWidth();//이미지의 폭
+        var $bannerHeight = $banner.children().outerHeight(); // 높이
+        var $length = $banner.children().length;//이미지의 갯수
+        var rollingId;
+
+        //정해진 초마다 함수 실행
+        rollingId = setInterval(function() { rollingStart(); }, 2000);//다음 이미지로 롤링 애니메이션 할 시간차
+    
+        function rollingStart() {
+            $banner.css("width", $bannerWidth * $length + "px");
+            $banner.css("height", $bannerHeight + "px");
+            //alert(bannerHeight);
+            //배너의 좌측 위치를 옮겨 준다.
+            $banner.animate({left: - $bannerWidth + "px"}, 3000, function() { //숫자는 롤링 진행되는 시간이다.
+                //첫번째 이미지를 마지막 끝에 복사(이동이 아니라 복사)해서 추가한다.
+                $(this).append("<li>" + $(this).find("li:first").html() + "</li>");
+                //뒤로 복사된 첫번재 이미지는 필요 없으니 삭제한다.
+                $(this).find("li:first").remove();
+                //다음 움직임을 위해서 배너 좌측의 위치값을 초기화 한다.
+                $(this).css("left", 0);
+                //이 과정을 반복하면서 계속 롤링하는 배너를 만들 수 있다.
+            });
+        }
+    }); 
+
+
+        /*내가참여하고 있는 투게더*/
+    
+        $(document).ready(function () {
+    var itemsMainDiv = ('.MultiCarousel');
+    var itemsDiv = ('.MultiCarousel-inner');
+    var itemWidth = "";
+
+    $('.leftLst, .rightLst').click(function () {
+        var condition = $(this).hasClass("leftLst");
+        if (condition)
+            click(0, this);
+        else
+            click(1, this)
+    });
+
+    ResCarouselSize();
+
+    $(window).resize(function () {
+        ResCarouselSize();
+    });
+
+    //this function define the size of the items
+    function ResCarouselSize() {
+        var incno = 0;
+        var dataItems = ("data-items");
+        var itemClass = ('.item');
+        var id = 0;
+        var btnParentSb = '';
+        var itemsSplit = '';
+        var sampwidth = $(itemsMainDiv).width();
+        var bodyWidth = $('body').width();
+        $(itemsDiv).each(function () {
+            id = id + 1;
+            var itemNumbers = $(this).find(itemClass).length;
+            btnParentSb = $(this).parent().attr(dataItems);
+            itemsSplit = btnParentSb.split(',');
+            $(this).parent().attr("id", "MultiCarousel" + id);
+
+
+            if (bodyWidth >= 1200) {
+                incno = itemsSplit[3];
+                itemWidth = sampwidth / incno;
+            }
+            else if (bodyWidth >= 992) {
+                incno = itemsSplit[2];
+                itemWidth = sampwidth / incno;
+            }
+            else if (bodyWidth >= 768) {
+                incno = itemsSplit[1];
+                itemWidth = sampwidth / incno;
+            }
+            else {
+                incno = itemsSplit[0];
+                itemWidth = sampwidth / incno;
+            }
+            $(this).css({ 'transform': 'translateX(0px)', 'width': itemWidth * itemNumbers });
+            $(this).find(itemClass).each(function () {
+                $(this).outerWidth(itemWidth);
+            });
+
+            $(".leftLst").addClass("over");
+            $(".rightLst").removeClass("over");
+
+        });
+    }
+
+
+    //this function used to move the items
+    function ResCarousel(e, el, s) {
+        var leftBtn = ('.leftLst');
+        var rightBtn = ('.rightLst');
+        var translateXval = '';
+        var divStyle = $(el + ' ' + itemsDiv).css('transform');
+        var values = divStyle.match(/-?[\d\.]+/g);
+        var xds = Math.abs(values[4]);
+        if (e == 0) {
+            translateXval = parseInt(xds) - parseInt(itemWidth * s);
+            $(el + ' ' + rightBtn).removeClass("over");
+
+            if (translateXval <= itemWidth / 2) {
+                translateXval = 0;
+                $(el + ' ' + leftBtn).addClass("over");
+            }
+        }
+        else if (e == 1) {
+            var itemsCondition = $(el).find(itemsDiv).width() - $(el).width();
+            translateXval = parseInt(xds) + parseInt(itemWidth * s);
+            $(el + ' ' + leftBtn).removeClass("over");
+
+            if (translateXval >= itemsCondition - itemWidth / 2) {
+                translateXval = itemsCondition;
+                $(el + ' ' + rightBtn).addClass("over");
+            }
+        }
+        $(el + ' ' + itemsDiv).css('transform', 'translateX(' + -translateXval + 'px)');
+    }
+
+    //It is used to get some elements from btn
+    function click(ell, ee) {
+        var Parent = "#" + $(ee).parent().attr("id");
+        var slide = $(Parent).attr("data-slide");
+        ResCarousel(ell, Parent, slide);
+    }
+
+});
+
+</script>
+</head>
+<body>
+    <header>
+            
+    </header>
+<section>
+
+    <div id="intro">
+        <article> 
+           
+            <section>
+        <hr>
+        <div class="container bootstrap snippet">
+            <div class="row">
+                  <div class="col-sm-4"><h1>나의 정보</h1></div>
+                <div class="col-sm-7"><h2>
+                    진행중인 투게더
+                </h2></div>
+            </div>
+            <div class="row">
+                  <div class="col-sm-4"><!--left col-->
+                      
+        
+              <div class="text-center">
+                
+                <div id='View_area' style='position:relative; color: black; border: 0px solid black; display: inline; '>
+                    <img id ="prev_View_area" class="obj" src="../common_images/img_ex.png">
+                    <h6>닉네임 : 가득하쥬</h6>
+                </div>
+                <input type="file" name="profile_pt" class="commfloat insert" id="profile_pt" onchange="previewImage(this,'View_area')">
+              </div></hr><br>
+                  <div class="row">
+                    <div class="span4 well" style="padding-bottom:0">
+                        <form accept-charset="UTF-8" action="" method="POST">
+                            <textarea class="span4" id="new_message" name="new_message"
+                            placeholder="상태메시지를 적어주세요" rows="5"></textarea>
+                            <h6 class="pull-right">최대 30자</h6>
+                            <button class="btn btn-primary btn-block" type="submit">메세지 새로고침</button>
+                        </form>
+                    </div>
+                </div>
+        
+                  
+                </div><!--/col-3-->
+                
+                <div class="col-sm-8">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#home">투게더챌린지 하루 1번</a></li>
+                        <li><a data-toggle="tab" href="#messages">투게더</a></li>
+                        <li><a data-toggle="tab" href="#settings">투게더</a></li>
+                      </ul>
+        
+                      
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="home">
+                        <hr>
+                          <form class="form" action="##" method="post" id="registrationForm">
+                              <div class="form-group">
+                                  
+                                  <div class="col-xs-6">
+                                      <label for="togetherimg"><h4>투게더 이름</h4></label>
+                                      <img class="tog_img" src="../common_images/img_ex.png" alt="" width="50%">
+        
+                                      <div class="progress">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+                                      </div>
+                                  </div>
+        
+                                  <div >
+                                    <h6>참여인원 : 100 명</h6>       
+                                    <h6>참가금액 : 1000000 원</h6>
+                                    </div>
+        
+                                    <div class="form-group">
+                                        <div class="col-xs-6">
+                                                <button class="btn btn-primary btn-lg">인증하러가기</button>
+                                         </div>
+                                   </div>  
+                              </div>
+                          </form>
+                      
+                     </div><!--/tab-pane-->
+                     <div class="tab-pane" id="messages">
+                       
+                       <h2></h2>
+                       
+                       <hr>
+                          <form class="form" action="##" method="post" id="registrationForm">
+                            <div class="form-group">
+                                  
+                                <div class="col-xs-6">
+                                    <label for="togetherimg"><h4>투게더 이름</h4></label>
+                                    <img class="tog_img" src="../common_images/img_ex.png" alt="" width="50%">
+        
+                                    <div class="progress">
+                                      <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+                                    </div>
+                                </div>
+        
+                                <div >
+                                  <h6>참여인원 : 100 명</h6>       
+                                  <h6>참가금액 : 1000000 원</h6>
+                                  </div>
+        
+                                  <div class="form-group">
+                                      <div class="col-xs-6">
+                                              <button class="btn btn-lg">인증하러가기</button>
+                                       </div>
+                                 </div>  
+                            </div>
+                          </form>
+                       
+                     </div><!--/tab-pane-->
+                     <div class="tab-pane" id="settings">           
+                          <hr>
+                          <form class="form" action="##" method="post" id="registrationForm">
+                            <div class="form-group">
+                                  
+                                <div class="col-xs-6">
+                                    <label for="togetherimg"><h4>투게더 이름</h4></label>
+                                    <img class="tog_img" src="../common_images/img_ex.png" alt="" width="50%">
+        
+                                    <div class="progress">
+                                      <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+                                    </div>
+                                </div>
+        
+                                <div >
+                                  <h6>참여인원 : 100 명</h6>       
+                                  <h6>참가금액 : 1000000 원</h6>
+                                  </div>
+        
+                                  <div class="form-group">
+                                      <div class="col-xs-6">
+                                              <button class="btn btn-lg">인증하러가기</button>
+                                       </div>
+                                 </div>  
+                            </div>
+                          </form>
+                      </div>
+                       
+                      </div><!--/tab-pane-->
+                  </div><!--/tab-content-->
+        
+                </div><!--/col-9-->
+            </div><!--/row-->
+        
+    
+        </article>
+    </div>
+
+    
+    <article>
+        <div  id="mytog">
+        <p>내가 개설한 TOGETHER</p>
+         </div>
+        <div class="container">
+            <div class="row">
+                <div class="MultiCarousel " data-items="1,2,3,3" data-slide="1" id="MultiCarousel"  data-interval="1000">
+                    <div class="MultiCarousel-inner">
+                        <div class="item">
+                            <div class="pad15">
+                                <img src="../common_images/img_ex.png" alt="">
+                                <p class="lead">투게더 이름</p>   
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="pad15">
+                                <img src="../common_images/img_ex.png" alt="">
+                                <p class="lead">투게더 이름</p>   
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="pad15">
+                                <img src="../common_images/img_ex.png" alt="">
+                                <p class="lead">투게더 이름</p>   
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="pad15">
+                                <img src="../common_images/img_ex.png" alt="">
+                                <p class="lead">투게더 이름</p>   
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="pad15">
+                                <img src="../common_images/img_ex.png" alt="">
+                                <p class="lead">투게더 이름</p>   
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="pad15">
+                                <img src="../common_images/img_ex.png" alt="">
+                                <p class="lead">투게더 이름</p>   
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <button class="btn btn-primary leftLst"><</button>
+                    <button class="btn btn-primary rightLst">></button>
+                </div>
+            </div>
+        </div>
+    
+
+
+    </article>
+
+    <article>
+        <div  id="mytog">
+        <p>참여 완료 TOGETHER</p>
+         </div>
+        <div class="container">
+            <div class="row">
+                <div class="MultiCarousel " data-items="1,2,3,3" data-slide="1" id="MultiCarousel"  data-interval="1000">
+                    <div class="MultiCarousel-inner">
+                        <div class="item">
+                            <div class="pad15">
+                                <img src="../common_images/img_ex.png" alt="">
+                                <p class="lead">투게더 이름</p>   
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="pad15">
+                                <img src="../common_images/img_ex.png" alt="">
+                                <p class="lead">투게더 이름</p>   
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="pad15">
+                                <img src="../common_images/img_ex.png" alt="">
+                                <p class="lead">투게더 이름</p>   
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="pad15">
+                                <img src="../common_images/img_ex.png" alt="">
+                                <p class="lead">투게더 이름</p>   
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="pad15">
+                                <img src="../common_images/img_ex.png" alt="">
+                                <p class="lead">투게더 이름</p>   
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="pad15">
+                                <img src="../common_images/img_ex.png" alt="">
+                                <p class="lead">투게더 이름</p>   
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <button class="btn btn-primary leftLst"><</button>
+                    <button class="btn btn-primary rightLst">></button>
+                </div>
+            </div>
+        </div>
+    
+
+
+    </article>
+ 
+</section>
+
+</body>
+</html>
